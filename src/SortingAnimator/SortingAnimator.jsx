@@ -26,8 +26,7 @@ export default class SortingAnimator extends React.Component {
     return (
       <>
         {array.map((value, indx) => (
-            <div className="array-bar" key={indx}>
-              {value}
+            <div className="array-bar" key={indx} style={{width:`${value}px`}}>
             </div>
         ))}
       </>
