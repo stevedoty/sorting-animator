@@ -15,8 +15,8 @@ export default class SortingAnimator extends React.Component {
 
   resetArray(){
     const array = [];
-    for(let i = 0; i < 100; i++ ){
-      array.push( randomIntFromInterval(5, 1000) );
+    for(let i = 0; i < 200; i++ ){
+      array.push( randomIntFromInterval(5, 500) );
     }
     this.setState({array});
   }
@@ -24,12 +24,12 @@ export default class SortingAnimator extends React.Component {
   render(){
     const {array} = this.state;
     return (
-      <>
+      <div className="">
         {array.map((value, indx) => (
             <div className="array-bar" key={indx} style={{width:`${value}px`}}>
             </div>
         ))}
-      </>
+      </div>
     );
   }
 }
