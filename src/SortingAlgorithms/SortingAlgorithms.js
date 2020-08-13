@@ -14,7 +14,7 @@ export const mergeSort = array => {
   let i=0,
     j=0;
   //while interating over arrays
-  while( i < firstHalf.length && j < secondHalf.length ){
+  while( i < firstHalf.length && j < secondHalf.length){
     //if the first value is less than the second value
     if(firstHalf[i] < secondHalf[j]){
       //push [i] then add to i

@@ -15,13 +15,13 @@ export default class SortingAnimator extends React.Component {
     const array = resetArray();
     this.setState({array})
   }
+  //create new resetArray function
 
   //fine tune mergeSort on this end
   mergeSort(){
     console.log('unsorted',this.state.array)
     //sort array with javascript sort method
     const javascriptSortedArray = this.state.array
-      .slice()
       .sort((a, b) => a - b);
     //sort array with my mergeSort method
     const mySortedArray = sortingAlgorithms.mergeSort(this.state.array)
@@ -32,7 +32,7 @@ export default class SortingAnimator extends React.Component {
       console.log('lengths are '+ true)}
     else{
       console.log('lengths are '+ false)};
-    //test if arrays are the same  
+    //test if arrays are the same 17:43
     if (javascriptSortedArray == mySortedArray){
       console.log('orders are ' + true)}
     else{
