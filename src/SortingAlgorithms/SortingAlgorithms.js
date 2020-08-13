@@ -1,5 +1,6 @@
 export const mergeSort = array => {
-  //special case
+  //special cases
+  //if (array === 0)return;
   if (array.length === 1) return array;
   //find middle of array
   const middleIndx = Math.floor(array.length/2);
@@ -10,7 +11,8 @@ export const mergeSort = array => {
   //create new array
   const sortedArray = [];
   //create index variables
-  let i=0, j=0;
+  let i=0,
+    j=0;
   //while interating over arrays
   while( i < firstHalf.length && j < secondHalf.length ){
     //if the first value is less than the second value
