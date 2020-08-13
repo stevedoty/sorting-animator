@@ -1,7 +1,7 @@
 import React from 'react';
 import './SortingAnimator.css'
 import {resetArray} from '../helperFile.jsx';
-import {mergeSort} from '../SortingAlgorithms/SortingAlgorithms'
+import {mergeSort} from '../SortingAlgorithms/SortingAlgorithms.js'
 
 export default class SortingAnimator extends React.Component {
   constructor(props){
@@ -13,7 +13,6 @@ export default class SortingAnimator extends React.Component {
 
   componentDidMount(){
     const array = resetArray();
-
     this.setState({array})
   }
 
