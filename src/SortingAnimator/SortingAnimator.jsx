@@ -1,6 +1,6 @@
 import React from 'react';
 import './SortingAnimator.css'
-import {resetArray} from '../helperFile.jsx';
+import {resetArray, areArraysEqual} from '../helperFile.jsx';
 import * as sortingAlgorithms from '../SortingAlgorithms/sortingAlgorithms.js'
 
 export default class SortingAnimator extends React.Component {
@@ -16,27 +16,19 @@ export default class SortingAnimator extends React.Component {
     this.setState({array})
   }
   //create new resetArray function
-
+  resetArray(){
+    const array = resetArray();
+    this.setState({array});
+  }
   //fine tune mergeSort on this end
   mergeSort(){
-    console.log('unsorted',this.state.array)
     //sort array with javascript sort method
     const javascriptSortedArray = this.state.array
       .sort((a, b) => a - b);
     //sort array with my mergeSort method
     const mySortedArray = sortingAlgorithms.mergeSort(this.state.array)
-    console.log('js-sorted-array', javascriptSortedArray)
-    console.log('my-sorted-array', mySortedArray)
-    //test if lengths are the same
-    if (javascriptSortedArray.length == mySortedArray.length){
-      console.log('lengths are '+ true)}
-    else{
-      console.log('lengths are '+ false)};
-    //test if arrays are the same 17:43
-    if (javascriptSortedArray == mySortedArray){
-      console.log('orders are ' + true)}
-    else{
-      console.log('orders are ' + false)}
+    //run test
+    console.log(areArraysEqual(javascriptSortedArray, mySortedArray))
     //display new sorted array on DOM
     this.setState({array:mySortedArray})
   }
@@ -46,7 +38,7 @@ export default class SortingAnimator extends React.Component {
     return (
       <div>
         <nav className="nav">
-          <button className="nav-item" onClick={() => this.componentDidMount()}>NEW ARRAY</button>
+          <button className="nav-item" onClick={() => this.resetArray()}>NEW ARRAY</button>
           <div className="vertical-rule nav-item"></div>
           <button className="nav-item" onClick={() => this.mergeSort()}>MERGE SORT</button>
           <button className="nav-item">QUICK SORT</button>

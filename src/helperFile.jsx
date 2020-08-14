@@ -15,3 +15,12 @@ export const resetArray = () => {
   }
   return array;
 }
+
+//create a test to compare two arrays
+export const areArraysEqual = (arrayOne, arrayTwo) => {
+  if (arrayOne.length !== arrayTwo.length)return false;
+  for (let i=0; i<arrayOne.length; i++){
+    if(arrayOne[i] !== arrayTwo[i])return false;
+  }
+  return true;
+}
