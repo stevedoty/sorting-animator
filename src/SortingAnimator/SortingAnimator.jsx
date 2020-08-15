@@ -33,6 +33,22 @@ export default class SortingAnimator extends React.Component {
     this.setState({array:mySortedArray})
   }
 
+  //large scale testing algorithm with DOM button
+  testSortingAlgorithms(){
+    //generate new array]
+    let testArray = resetArray()
+    //run sort() * 100
+    for (let i=0; i<100; i++){
+      //sort the test array
+      let sortedArray = sortingAlgorithms.mergeSort(testArray);
+      //create js sorted array
+      const javascriptSortedArray = testArray
+        .sort((a, b) => a - b);
+      //if sorted array == js sorted array return true; else false
+      console.log(areArraysEqual(javascriptSortedArray, sortedArray))
+    }
+  }
+
   render(){
     const {array} = this.state;
     return (
@@ -40,15 +56,19 @@ export default class SortingAnimator extends React.Component {
         <nav className="nav">
           <button className="nav-item" onClick={() => this.resetArray()}>NEW ARRAY</button>
           <div className="vertical-rule nav-item"></div>
-          <button className="nav-item" onClick={() => this.mergeSort()}>MERGE SORT</button>
-          <button className="nav-item">QUICK SORT</button>
-          <button className="nav-item">HEAP SORT</button>
-          <button className="nav-item">BUBBLE SORT</button>
+          <button className="nav-item" onClick={() => this.mergeSort()}>MERGE</button>
+          <button className="nav-item">QUICK</button>
+          <button className="nav-item">HEAP</button>
+          <button className="nav-item">BUBBLE</button>
+          <div className="vertical-rule nav-item"></div>
+          <button className="nav-item" onClick={() => this.testSortingAlgorithms()}>Test</button>
         </nav>
         <div className="array-container">
           {array.map((value, indx) => (
+            <div className ="array-bar-container">
               <div className="array-bar" key={indx} style={{width:`${value}px`}}>
               </div>
+            </div>
           ))}
         </div>
       </div>

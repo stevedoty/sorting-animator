@@ -16,10 +16,11 @@
 .array-container{
   padding-top: 10px;
 }
-
+.array-bar-container{
+  padding: 1px;
+}
 .array-bar{
   background-color: turquoise;
-  height: 1px;
+  height: 2px;
   margin: auto;
-  margin-top: 1px;
 }
