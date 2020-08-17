@@ -9,7 +9,7 @@ export const resetArray = () => {
   //create a new array
   const array = [];
   //iterate
-  for(let i = 0; i < 350; i++ ){
+  for(let i = 0; i < 150; i++ ){
     //generate new Int for every iteration, add to array
     array.push( randomIntFromInterval(5, 500) );
   }
