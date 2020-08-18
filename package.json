@@ -1,5 +1,6 @@
 {
   "name": "sorting-animator",
+  "homepage":"https://stevedoty.github.io/sorting-animator/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
